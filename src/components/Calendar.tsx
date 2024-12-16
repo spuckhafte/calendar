@@ -48,9 +48,6 @@ export default function Calendar() {
     };
 
     const handleMonthDownload = () => {
-        const currentMonthStart = startOfMonth(currentMonth);
-        const currentMonthEnd = endOfMonth(currentMonth);
-
         const eventsInCurrentMonth = Object.values(events)
             .flat()  // Flatten all the events (assuming events are grouped by day)
             .filter(event => {

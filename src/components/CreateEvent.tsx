@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAtom } from "jotai";
+import { useAtom, useSetAtom } from "jotai";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader } from "./ui/dialog";
 import { dayAtom, eventsAtom } from "@/lib/atoms";
 import { numericToTextDate } from "@/lib/utils";
@@ -18,7 +18,7 @@ type CreateEventProps = {
 };
 
 export default function CreateEvent(props: CreateEventProps) {
-    const [events, setEvents] = useAtom(eventsAtom);
+    const setEvents = useSetAtom(eventsAtom);
     const [day, _setDay] = useAtom(dayAtom);
 
     const [name, setName] = useState("");
